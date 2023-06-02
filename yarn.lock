@@ -735,8 +735,9 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@release-it/conventional-changelog@github:release-it/conventional-changelog":
+"@release-it/conventional-changelog@release-it/conventional-changelog":
   version "5.1.1"
+  uid ff9f1aae654dc378d5ed4703a2802ef9591e1a96
   resolved "https://codeload.github.com/release-it/conventional-changelog/tar.gz/ff9f1aae654dc378d5ed4703a2802ef9591e1a96"
   dependencies:
     concat-stream "^2.0.0"
@@ -4272,9 +4273,9 @@ validate-npm-package-license@^3.0.1:
     spdx-expression-parse "^3.0.0"
 
 vm2@^3.9.17:
-  version "3.9.17"
-  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.17.tgz#251b165ff8a0e034942b5181057305e39570aeab"
-  integrity sha512-AqwtCnZ/ERcX+AVj9vUsphY56YANXxRuqMb7GsDtAr0m0PcQX3u0Aj3KWiXM0YAHy7i6JEeHrwOnwXbGYgRpAw==
+  version "3.9.19"
+  resolved "https://registry.yarnpkg.com/vm2/-/vm2-3.9.19.tgz#be1e1d7a106122c6c492b4d51c2e8b93d3ed6a4a"
+  integrity sha512-J637XF0DHDMV57R6JyVsTak7nIL8gy5KH4r1HiwWLf/4GBbb5MKL5y7LpmF4A8E2nR6XmzpmMFQ7V7ppPTmUQg==
   dependencies:
     acorn "^8.7.0"
     acorn-walk "^8.2.0"
