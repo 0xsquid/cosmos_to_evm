@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@0xsquid/sdk@1.4.2-alpha.0":
-  version "1.4.2-alpha.0"
-  resolved "https://registry.yarnpkg.com/@0xsquid/sdk/-/sdk-1.4.2-alpha.0.tgz#f9b408f014271ff3b5d2dc7a7e1d3d79349c8da4"
-  integrity sha512-kBulNnSAVmP10NLuAxUvpmD124xusxUNIV4WZZzhJlKGkrKdprpUkdFW33yzgaJs7X8jRkGWoqg6kzDIEL39BA==
+"@0xsquid/sdk@1.4.2-delta.0":
+  version "1.4.2-delta.0"
+  resolved "https://registry.yarnpkg.com/@0xsquid/sdk/-/sdk-1.4.2-delta.0.tgz#50054695c9f23e010262819345b1c3c97513d4db"
+  integrity sha512-vY/f3nAvLJjAEmHwDAMkmx0QT9F+ncxM1N/XnwfLKDi61dXtsMpswxCvUu1jk4EikQbW8kfmn7hainRiMqQ3Bg==
   dependencies:
     "@release-it/conventional-changelog" release-it/conventional-changelog
     axios "^0.27.2"

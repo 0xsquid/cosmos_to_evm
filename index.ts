@@ -19,17 +19,17 @@ import {
 
   const mnemonic =
     "muscle abuse foam practice elite foster glue immune steak thunder afraid soft";
-  //const dydxRpc = "http://3.141.111.178:26657";
-  const osmosisRpc = "https://rpc.osmotest5.osmosis.zone";
+  const dydxRpc = "http://3.141.111.178:26657";
+  //const osmosisRpc = "https://rpc.osmotest5.osmosis.zone";
 
   const getSignerFromMnemonic = async (): Promise<OfflineDirectSigner> => {
     return DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
-      prefix: "osmo",
+      prefix: "dydx",
     });
   };
   const signer: OfflineDirectSigner = await getSignerFromMnemonic();
   const signingClient = await SigningStargateClient.connectWithSigner(
-    osmosisRpc,
+    dydxRpc,
     signer
   );
 
@@ -51,7 +51,7 @@ import {
   }; */
 
   //ausdc:osmosis > avax:avalanche
-  const routeParams = {
+  /* const routeParams = {
     fromChain: "osmo-test-5",
     fromToken:
       "ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE",
@@ -61,7 +61,24 @@ import {
     toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
     toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
     slippage: 3.0,
+  }; */
+
+  const routeParams = {
+    fromChain: "dydxprotocol-testnet",
+    fromToken: squid.tokens.find(
+      (t) =>
+        t.symbol.toLocaleLowerCase() === "usdc" &&
+        t.chainId === "dydxprotocol-testnet"
+    )!.address,
+    fromAmount: "333333",
+    cosmosSignerAddress: signerAddress,
+    toChain: 43113,
+    toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
+    slippage: 3.0,
   };
+
+  console.log("route params: ", routeParams);
 
   const { route } = await squid.getRoute(routeParams);
 
