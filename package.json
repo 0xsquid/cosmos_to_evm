@@ -7,7 +7,7 @@
     "dev": "ts-node index.ts"
   },
   "dependencies": {
-    "@0xsquid/sdk": "1.4.2-delta.0",
+    "@0xsquid/sdk": "1.4.2-prealpha.0",
     "@cosmjs/stargate": "^0.30.1",
     "@types/node": "^18.11.10",
     "@types/typescript": "^2.0.0",

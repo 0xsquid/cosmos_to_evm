@@ -1,4 +1,4 @@
-import { Squid } from "@0xsquid/sdk";
+import { CosmosChain, Squid } from "@0xsquid/sdk";
 import { SigningStargateClient, DeliverTxResponse } from "@cosmjs/stargate";
 import {
   DirectSecp256k1HdWallet,
@@ -19,17 +19,22 @@ import {
 
   const mnemonic =
     "muscle abuse foam practice elite foster glue immune steak thunder afraid soft";
-  const dydxRpc = "http://3.141.111.178:26657";
-  //const osmosisRpc = "https://rpc.osmotest5.osmosis.zone";
+
+  const chainId = "grand-1";
+  //const dydxRpc = "http://3.16.182.9:26657";
+
+  const chain = squid.chains.find(
+    (c) => c.chainId.toString().toLocaleLowerCase() === chainId
+  ) as CosmosChain;
 
   const getSignerFromMnemonic = async (): Promise<OfflineDirectSigner> => {
     return DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
-      prefix: "dydx",
+      prefix: chain.bech32Config.bech32PrefixAccAddr,
     });
   };
   const signer: OfflineDirectSigner = await getSignerFromMnemonic();
   const signingClient = await SigningStargateClient.connectWithSigner(
-    dydxRpc,
+    chain.rpc,
     signer
   );
 
@@ -64,13 +69,11 @@ import {
   }; */
 
   const routeParams = {
-    fromChain: "dydxprotocol-testnet",
+    fromChain: chainId,
     fromToken: squid.tokens.find(
-      (t) =>
-        t.symbol.toLocaleLowerCase() === "usdc" &&
-        t.chainId === "dydxprotocol-testnet"
+      (t) => t.symbol.toLocaleLowerCase() === "usdc" && t.chainId === chainId
     )!.address,
-    fromAmount: "333333",
+    fromAmount: "600000",
     cosmosSignerAddress: signerAddress,
     toChain: 43113,
     toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
