@@ -81,6 +81,20 @@ import {
     slippage: 3.0,
   };
 
+  // nusdc:dydx > wavax:avalanche
+  /*  const routeParams = {
+    fromChain: chainId,
+    fromToken: squid.tokens.find(
+      (t) => t.symbol.toLocaleLowerCase() === "usdc" && t.chainId === chainId
+    )!.address,
+    fromAmount: "600000",
+    cosmosSignerAddress: signerAddress,
+    toChain: 43113,
+    toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+    toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
+    slippage: 3.0,
+  };
+ */
   console.log("route params: ", routeParams);
 
   const { route } = await squid.getRoute(routeParams);

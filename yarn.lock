@@ -2,13 +2,16 @@
 # yarn lockfile v1
 
 
-"@0xsquid/sdk@1.4.2-prealpha.0":
-  version "1.4.2-prealpha.0"
-  resolved "https://registry.yarnpkg.com/@0xsquid/sdk/-/sdk-1.4.2-prealpha.0.tgz#b8c650e90bfdedd9bdaf01a76c40babe913d6778"
-  integrity sha512-q7oVIWvjbKFf2atLIPazfaEaupLZwYb8YKg3nGvDrbcAWYySD6haTi+Z6kLZubP/IA1ShbIxQuJ2MZRbygmeDg==
+"@0xsquid/sdk@1.4.3-beta.0":
+  version "1.4.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@0xsquid/sdk/-/sdk-1.4.3-beta.0.tgz#2b3c96058484fbb8e2bfaa6cf976c8239df8c3a6"
+  integrity sha512-gIFDr3hNK0PL5WHXomSEVFjk61ALWHA3JqeT3CYsAVU6XcMhpXSOkexr7+Vb/wI2/m84T/FkCSa7dHQ6kWEsbA==
   dependencies:
+    "@cosmjs/encoding" "^0.30.1"
+    "@cosmjs/stargate" "^0.30.1"
     "@release-it/conventional-changelog" release-it/conventional-changelog
     axios "^0.27.2"
+    cosmjs-types "^0.8.0"
     ethers "^5.7.1"
     release-it "^15.5.0"
 
@@ -1439,6 +1442,14 @@ cosmjs-types@^0.7.1:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/cosmjs-types/-/cosmjs-types-0.7.2.tgz#a757371abd340949c5bd5d49c6f8379ae1ffd7e2"
   integrity sha512-vf2uLyktjr/XVAgEq0DjMxeAWh1yYREe7AMHDKd7EiHVqxBPCaBS+qEEQUkXbR9ndnckqr1sUG8BQhazh4X5lA==
+  dependencies:
+    long "^4.0.0"
+    protobufjs "~6.11.2"
+
+cosmjs-types@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/cosmjs-types/-/cosmjs-types-0.8.0.tgz#2ed78f3e990f770229726f95f3ef5bf9e2b6859b"
+  integrity sha512-Q2Mj95Fl0PYMWEhA2LuGEIhipF7mQwd9gTQ85DdP9jjjopeoGaDxvmPa5nakNzsq7FnO1DMTatXTAx6bxMH7Lg==
   dependencies:
     long "^4.0.0"
     protobufjs "~6.11.2"
