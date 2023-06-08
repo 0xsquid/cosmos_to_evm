@@ -6,22 +6,18 @@ import {
 } from "@cosmjs/proto-signing";
 
 (async () => {
-  const baseUrl = "http://localhost:3000";
-  //const baseUrl = "https://squid-api-git-feat-dydx-poc2-v2-0xsquid.vercel.app";
+  const baseUrl = "https://squid-api-git-feat-cosmos-main-0xsquid.vercel.app";
 
-  // instantiate the SDK
   const squid = new Squid({
     baseUrl: baseUrl,
   });
-  // init the SDK
   await squid.init();
   console.log("Squid inited");
 
-  const mnemonic =
-    "muscle abuse foam practice elite foster glue immune steak thunder afraid soft";
+  const mnemonic = "put your mnemonic here";
+  //https://help.keplr.app/articles/how-to-view-your-seed-phrase#:~:text=Open%20your%20Keplr%20extension%20and,copy%20and%20export%20as%20needed.
 
-  const chainId = "grand-1";
-  //const dydxRpc = "http://3.16.182.9:26657";
+  const chainId = "osmo-test-5";
 
   const chain = squid.chains.find(
     (c) => c.chainId.toString().toLocaleLowerCase() === chainId
@@ -42,18 +38,19 @@ import {
   console.log(signerAddress);
   console.log("balances: ", await signingClient.getAllBalances(signerAddress));
 
-  //nusdc:osmosis > avax:avalanche
-  /*   const routeParams = {
-    fromChain: "osmo-test-5",
-    fromToken:
-      "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4",
+  //ausdc:osmosis > avax:avalanche  no swaps
+  const routeParams = {
+    fromChain: chainId,
+    fromToken: squid.tokens.find(
+      (t) => t.symbol.toLocaleLowerCase() === "ausdc" && t.chainId === chainId
+    )!.address,
     fromAmount: "555555",
     cosmosSignerAddress: signerAddress,
     toChain: 43113,
     toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-    toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
+    toAddress: "put your address here",
     slippage: 3.0,
-  }; */
+  };
 
   //ausdc:osmosis > avax:avalanche
   /* const routeParams = {
@@ -68,7 +65,7 @@ import {
     slippage: 3.0,
   }; */
 
-  const routeParams = {
+  /* const routeParams = {
     fromChain: chainId,
     fromToken: squid.tokens.find(
       (t) => t.symbol.toLocaleLowerCase() === "usdc" && t.chainId === chainId
@@ -80,6 +77,24 @@ import {
     toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
     slippage: 3.0,
   };
+
+ */
+
+  /*  const routeParams = {
+    fromChain: chainId,
+    fromToken: squid.tokens.find(
+      (t) => t.symbol.toLocaleLowerCase() === "usdc" && t.chainId === chainId
+    )!.address,
+    fromAmount: "600000",
+    cosmosSignerAddress: signerAddress,
+    toChain: "osmo-test-5",
+    toToken: squid.tokens.find(
+      (t) =>
+        t.symbol.toLocaleLowerCase() === "usdc" && t.chainId === "osmo-test-5"
+    )!.address,
+    toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
+    slippage: 3.0,
+  }; */
 
   // nusdc:dydx > wavax:avalanche
   /*  const routeParams = {
