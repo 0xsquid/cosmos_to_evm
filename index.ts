@@ -14,7 +14,8 @@ import {
   await squid.init();
   console.log("Squid inited");
 
-  const mnemonic = "put your mnemonic here";
+  const mnemonic =
+    "muscle abuse foam practice elite foster glue immune steak thunder afraid soft";
   //https://help.keplr.app/articles/how-to-view-your-seed-phrase#:~:text=Open%20your%20Keplr%20extension%20and,copy%20and%20export%20as%20needed.
 
   const chainId = "osmo-test-5";
@@ -48,7 +49,7 @@ import {
     cosmosSignerAddress: signerAddress,
     toChain: 43113,
     toToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-    toAddress: "put your address here",
+    toAddress: "0xb13CD07B22BC5A69F8500a1Cb3A1b65618d50B22",
     slippage: 3.0,
   };
 
